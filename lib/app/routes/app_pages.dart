@@ -7,6 +7,7 @@
 // the string '/product-details'.
 
 import 'package:get/get.dart';
+import 'package:getx_app/app/modules/products/views/cart_view.dart';
 import 'package:getx_app/app/modules/products/views/product_details_view.dart';
 import 'package:getx_app/app/modules/products/views/product_view.dart';
 
@@ -18,11 +19,15 @@ abstract class AppPages {
   static final routes = [
     GetPage(
       name: Routes.product,
-      page: () => ProductView(), // Associate the PRODUCTS route with the ProductView
+      page: () => ProductView(), // Associate the products route with the ProductView
     ),
     GetPage(
       name: Routes.productDetails,
-      page: () => ProductDetailsView(), // Associate the PRODUCT_DETAILS route with the ProductDetailsView
+      page: () => ProductDetailsView(), // Associate the productDetails route with the ProductDetailsView
+    ),
+    GetPage(
+      name: Routes.cart,
+      page: () => CartView(), // Associate the cart route with the CartView
     ),
   ];
 }
