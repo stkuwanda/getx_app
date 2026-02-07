@@ -36,7 +36,11 @@ class ProductDetailsView extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 cartController.addToCart(product);
-                Get.snackbar('Added to cart', '${product.name} added to your cart');
+                Get.snackbar(
+                  'Added to cart',
+                  '${product.name} added to your cart',
+                  duration: const Duration(seconds: 2),
+                );
               },
               child: const Text('Add to Cart'),
             ),

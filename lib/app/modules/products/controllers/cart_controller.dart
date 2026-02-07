@@ -12,10 +12,10 @@ class CartController extends GetxController {
 
   void removeFromCart(ProductModel product) {
     cartItems.remove(product);
+    calculateTotal();
   }
 
   void calculateTotal() {
     totalAmount.value = cartItems.fold(0.0, (sum, item) => sum + item.price);
-    calculateTotal();
   }
 }

@@ -5,9 +5,7 @@ import 'package:getx_app/app/modules/products/controllers/product_controller.dar
 class ProductView extends StatelessWidget {
   ProductView({super.key});
 
-  final ProductController productController = Get.put(
-    ProductController(),
-  ); // Dependency injection using Get.put()
+  final ProductController productController = Get.find<ProductController>();
 
   @override
   Widget build(BuildContext context) {
