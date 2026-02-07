@@ -12,7 +12,7 @@ import 'package:getx_app/app/modules/products/views/product_view.dart';
 
 part 'app_routes.dart';
 
-class AppPages {
+abstract class AppPages {
   static const initial = Routes.product; // Define the initial route of the application
 
   static final routes = [
