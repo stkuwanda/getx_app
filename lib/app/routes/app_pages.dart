@@ -13,15 +13,15 @@ import 'package:getx_app/app/modules/products/views/product_view.dart';
 part 'app_routes.dart';
 
 class AppPages {
-  // static const INITIAL = Routes.PRODUCTS; // Define the initial route of the application
+  static const initial = Routes.product; // Define the initial route of the application
 
   static final routes = [
     GetPage(
-      name: Routes.PRODUCT,
+      name: Routes.product,
       page: () => ProductView(), // Associate the PRODUCTS route with the ProductView
     ),
     GetPage(
-      name: Routes.PRODUCT_DETAILS,
+      name: Routes.product_details,
       page: () => ProductDetailsView(), // Associate the PRODUCT_DETAILS route with the ProductDetailsView
     ),
   ];
