@@ -9,5 +9,5 @@ part of 'app_pages.dart';
 
 abstract class Routes {
   static const product = '/product';
-  static const product_details = '/product-details';
+  static const productDetails = '/product-details';
 }

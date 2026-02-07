@@ -21,7 +21,7 @@ class AppPages {
       page: () => ProductView(), // Associate the PRODUCTS route with the ProductView
     ),
     GetPage(
-      name: Routes.product_details,
+      name: Routes.productDetails,
       page: () => ProductDetailsView(), // Associate the PRODUCT_DETAILS route with the ProductDetailsView
     ),
   ];
