@@ -5,8 +5,8 @@ import 'package:getx_app/app/modules/products/controllers/product_controller.dar
 class ProductView extends StatelessWidget {
   ProductView({super.key});
 
-  late final ProductController productController = Get.put(
-    ProductController(), 
+  final ProductController productController = Get.put(
+    ProductController(),
   ); // Dependency injection using Get.put()
 
   @override
@@ -28,7 +28,7 @@ class ProductView extends StatelessWidget {
             );
           },
         ),
-      ),
+      ), // Use Obx to reactively update the UI when products change
     );
   }
 }
