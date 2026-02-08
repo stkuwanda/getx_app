@@ -8,6 +8,7 @@
 
 import 'package:get/get.dart';
 import 'package:getx_app/app/modules/products/views/cart_view.dart';
+import 'package:getx_app/app/modules/products/views/checkout_view.dart';
 import 'package:getx_app/app/modules/products/views/product_details_view.dart';
 import 'package:getx_app/app/modules/products/views/product_view.dart';
 
@@ -28,6 +29,10 @@ abstract class AppPages {
     GetPage(
       name: Routes.cart,
       page: () => CartView(), // Associate the cart route with the CartView
+    ),
+    GetPage(
+      name: Routes.checkout,
+      page: () => CheckoutView(), // Associate the checkout route with the CheckoutView
     ),
   ];
 }
