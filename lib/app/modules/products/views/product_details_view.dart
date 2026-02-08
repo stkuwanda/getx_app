@@ -43,10 +43,20 @@ class ProductDetailsView extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 cartController.addToCart(product);
+
+                // Show a snackbar to confirm that the product has been added to the cart
+                // Get.snackbar(
+                //   'Added to cart',
+                //   '${product.name} added to your cart',
+                //   duration: const Duration(seconds: 2),
+                // );
                 Get.snackbar(
-                  'Added to cart',
+                  'Add to Cart',
                   '${product.name} added to your cart',
-                  duration: const Duration(seconds: 2),
+                  snackPosition: SnackPosition.BOTTOM,
+                  duration: Duration(seconds: 3),
+                  backgroundColor: Colors.blueAccent,
+                  colorText: Colors.white,
                 );
               },
               child: const Text('Add to Cart'),
