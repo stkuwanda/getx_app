@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_app/app/modules/products/controllers/cart_controller.dart';
 import 'package:getx_app/app/modules/products/models/product_model.dart';
+import 'package:getx_app/app/routes/app_pages.dart';
 
 class ProductDetailsView extends StatelessWidget {
   ProductDetailsView({super.key});
@@ -19,7 +20,7 @@ class ProductDetailsView extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              Get.toNamed('/cart');
+              Get.toNamed(Routes.cart);
             },
             icon: const Icon(Icons.shopping_cart),
           ),

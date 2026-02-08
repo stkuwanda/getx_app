@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_app/app/modules/products/controllers/product_controller.dart';
+import 'package:getx_app/app/routes/app_pages.dart';
 
 class ProductView extends StatelessWidget {
   ProductView({super.key});
@@ -20,7 +21,7 @@ class ProductView extends StatelessWidget {
               title: Text(product.name),
               subtitle: Text('\$${product.price}'),
               onTap: () => Get.toNamed(
-                '/product-details',
+                Routes.productDetails,
                 arguments: product,
               ), // Navigate to product details page
             );

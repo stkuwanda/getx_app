@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_app/app/routes/app_pages.dart';
 
 class CheckoutView extends StatelessWidget {
   const CheckoutView({super.key});
@@ -16,7 +17,7 @@ class CheckoutView extends StatelessWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Get.offAllNamed('/product'); // Navigate back to the product list and clear the navigation stack
+                Get.offAllNamed(Routes.product); // Navigate back to the product list and clear the navigation stack
               },
               child: const Text('Go to Home'),
             ),
