@@ -30,6 +30,12 @@ class ProductDetailsView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // ElevatedButton(
+            //   onPressed: () {
+            //     Get.back(); // Navigate back to the previous page
+            //   },
+            //   child: const Text('Back'),
+            // ),
             Text(product.name, style: const TextStyle(fontSize: 24)),
             const SizedBox(height: 10),
             Text('\$${product.price}', style: const TextStyle(fontSize: 24)),
