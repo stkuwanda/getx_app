@@ -7,6 +7,7 @@
 // the string '/product-details'.
 
 import 'package:get/get.dart';
+import 'package:getx_app/app/bindings/product_binding.dart';
 import 'package:getx_app/app/modules/products/views/cart_view.dart';
 import 'package:getx_app/app/modules/products/views/checkout_view.dart';
 import 'package:getx_app/app/modules/products/views/product_details_view.dart';
@@ -21,6 +22,7 @@ abstract class AppPages {
     GetPage(
       name: Routes.product,
       page: () => ProductView(), // Associate the products route with the ProductView
+      binding: ProductBinding(), // Bind the ProductController to the ProductView using ProductBinding
     ),
     GetPage(
       name: Routes.productDetails,
