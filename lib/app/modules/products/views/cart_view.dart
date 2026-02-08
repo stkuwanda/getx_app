@@ -26,7 +26,21 @@ class CartView extends StatelessWidget {
                     subtitle: Text('\$${item.price}'),
                     trailing: IconButton(
                       icon: const Icon(Icons.remove_circle_outline),
-                      onPressed: () => cartController.removeFromCart(item),
+                      //onPressed: () => cartController.removeFromCart(item),
+                      onPressed: () {
+                        Get.defaultDialog(
+                          title: 'Remove item',
+                          middleText:
+                              'Are you sure you want to remove ${item.name} from the cart?',
+                          textConfirm: 'Yes',
+                          textCancel: 'No',
+                          confirmTextColor: Colors.white,
+                          onConfirm: () {
+                            cartController.removeFromCart(item);
+                            Get.back(); // Close the dialog after removing the item
+                          },
+                        );
+                      },
                     ),
                   );
                 },
@@ -43,11 +57,13 @@ class CartView extends StatelessWidget {
             ),
           ),
           ElevatedButton(
-              onPressed: () {
-                Get.toNamed(Routes.checkout); // Navigate to the checkout page when the button is pressed
-              },
-              child: const Text('Proceed to Checkout'),
-            ),
+            onPressed: () {
+              Get.toNamed(
+                Routes.checkout,
+              ); // Navigate to the checkout page when the button is pressed
+            },
+            child: const Text('Proceed to Checkout'),
+          ),
         ],
       ),
     );
