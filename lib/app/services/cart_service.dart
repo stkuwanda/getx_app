@@ -6,6 +6,21 @@ class CartService extends GetxService {
   final storage = GetStorage();
   var cartItems = <ProductModel>[].obs;
 
+  @override
+  void onInit() {
+    super.onInit();
+
+    List? storedCart = storage.read<List>('cartItems');
+
+    if (storedCart != null) {
+      cartItems.assignAll(storedCart.map((e) => ProductModel.fromJson(e)));
+    }
+
+    ever(cartItems, (_) {
+      storage.write('cartItems', cartItems.map((e) => e.toJson()).toList());
+    });
+  }
+
   void addToCart(ProductModel product) {
     cartItems.add(product);
   }
