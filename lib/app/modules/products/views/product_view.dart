@@ -20,10 +20,12 @@ class ProductView extends StatelessWidget {
             return ListTile(
               title: Text(product.name),
               subtitle: Text('\$${product.price}'),
-              onTap: () => Get.toNamed(
-                Routes.productDetails,
-                arguments: product,
-              ), // Navigate to product details page
+              onTap: () {
+                Get.toNamed(Routes.productDetails, arguments: product); // Navigate to product details page with the selected product as an argument through the route name defined in Routes.productDetails
+                // Get.to(() => ProductDetailsView(), arguments: product); --- IGNORE --- This is an alternative way to navigate to the product details page, but using Get.toNamed with the route name is more consistent with the routing setup in app_pages.dart
+                // Get.off(() => ProductDetailsView(), arguments: product); --- IGNORE --- This would navigate to the product details page but also remove the current page from the navigation stack, which is not desired in this case as we want to be able to navigate back to the product list.
+                // Get.offNamed(Routes.productDetails, arguments: product); --- IGNORE --- This would navigate to the product details page and remove the current page from the navigation stack, which is not desired in this case as we want to be able to navigate back to the product list.
+              }, 
             );
           },
         ),
