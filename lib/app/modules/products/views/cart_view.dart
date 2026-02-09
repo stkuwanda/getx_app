@@ -11,7 +11,7 @@ class CartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('cart')),
+      appBar: AppBar(title:  Text('cart'.tr)),
       body: Column(
         children: [
           Expanded(
@@ -29,11 +29,11 @@ class CartView extends StatelessWidget {
                       //onPressed: () => cartController.removeFromCart(item),
                       onPressed: () {
                         Get.defaultDialog(
-                          title: 'Remove item',
+                          title: 'remove_item'.tr,
                           middleText:
-                              'Are you sure you want to remove ${item.title} from the cart?',
-                          textConfirm: 'Yes',
-                          textCancel: 'No',
+                              'remove_item_confirmation'.tr.replaceAll('{item}', item.title),
+                          textConfirm: 'yes'.tr,
+                          textCancel: 'no'.tr,
                           confirmTextColor: Colors.white,
                           onConfirm: () {
                             cartController.removeFromCart(item);
@@ -51,7 +51,7 @@ class CartView extends StatelessWidget {
             () => Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text(
-                'Total: \$${cartController.totalAmount.toStringAsFixed(2)}',
+                '${'total'.tr}: \$${cartController.totalAmount.toStringAsFixed(2)}',
                 style: TextStyle(fontSize: 24),
               ),
             ),
@@ -62,7 +62,7 @@ class CartView extends StatelessWidget {
                 Routes.checkout,
               ); // Navigate to the checkout page when the button is pressed
             },
-            child: const Text('Proceed to Checkout'),
+            child:  Text('proceed_to_checkout'.tr),
           ),
         ],
       ),

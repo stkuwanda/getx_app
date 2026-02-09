@@ -16,7 +16,7 @@ class ProductDetailsView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Product Details'),
+        title: Text('product_details'.tr), // Use .tr to translate the title based on the current locale
         actions: [
           IconButton(
             onPressed: () {
@@ -51,15 +51,15 @@ class ProductDetailsView extends StatelessWidget {
                 //   duration: const Duration(seconds: 2),
                 // );
                 Get.snackbar(
-                  'Add to Cart',
-                  '${product.title} added to your cart',
+                  'add_to_cart'.tr,
+                  '${product.title} ${'added_to_cart'.tr}',
                   snackPosition: SnackPosition.BOTTOM,
                   duration: Duration(seconds: 3),
                   backgroundColor: Colors.blueAccent,
                   colorText: Colors.white,
                 );
               },
-              child: const Text('Add to Cart'),
+              child:  Text('add_to_cart'.tr),
             ),
             ElevatedButton(
               onPressed: () {
@@ -70,14 +70,14 @@ class ProductDetailsView extends StatelessWidget {
                       children: <Widget>[
                         ListTile(
                           leading: const Icon(Icons.shopping_cart),
-                          title: const Text('View Cart'),
+                          title:  Text('view_cart'.tr),
                           onTap: () {
                             Get.toNamed(Routes.cart);
                           },
                         ),
                         ListTile(
                           leading: const Icon(Icons.payment),
-                          title: const Text('Proceed to Checkout'),
+                          title:  Text('proceed_to_checkout'.tr),
                           onTap: () {
                             Get.toNamed(Routes.checkout);
                           },
@@ -87,7 +87,7 @@ class ProductDetailsView extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text('More'),
+              child:  Text('more'.tr),
             ),
           ],
         ),

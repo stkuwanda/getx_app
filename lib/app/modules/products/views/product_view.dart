@@ -11,7 +11,20 @@ class ProductView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Products')),
+      appBar: AppBar(title: Text('product_list'.tr),
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.language),
+          onPressed: () {
+            // Toggle between English and Spanish locales
+            if (Get.locale?.languageCode == 'en') {
+              Get.updateLocale(const Locale('es', 'ES'));
+            } else {
+              Get.updateLocale(const Locale('en', 'US'));
+            }
+          },
+        ),
+      ],), // Use .tr to translate the title based on the current locale
       body: Obx(() {
         if (productController.isLoading.value) {
           return Center(child: const CircularProgressIndicator());

@@ -9,12 +9,12 @@ class CheckoutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Checkout')),
+      appBar: AppBar(title:  Text('checkout'.tr)),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Thank you for your purchase.'),
+             Text('thank_you'.tr),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
@@ -25,8 +25,8 @@ class CheckoutView extends StatelessWidget {
                 cartController.cartItems.clear(); // Clear the cart items
 
                 Get.snackbar(
-                  'Order Placed',
-                  'Your order has been placed successfully!',
+                  'order_placed'.tr,
+                  'order_success'.tr,
                   snackPosition: SnackPosition.BOTTOM,
                   duration: Duration(seconds: 3),
                   backgroundColor: Colors.blueAccent,
@@ -37,7 +37,7 @@ class CheckoutView extends StatelessWidget {
                   Routes.product,
                 ); // Navigate back to the product list and clear the navigation stack
               },
-              child: const Text('Go to Home'),
+              child:  Text('go_to_home'.tr),
             ),
           ],
         ),
