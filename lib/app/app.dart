@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_app/app/routes/app_pages.dart';
+import 'package:getx_app/app/services/translations.dart';
 
 class GetXApp extends StatelessWidget {
   const GetXApp({super.key});
@@ -9,6 +10,9 @@ class GetXApp extends StatelessWidget {
   Widget build(BuildContext context) => GetMaterialApp(
     debugShowCheckedModeBanner: false,
     title: 'GetX App',
+    translations: AppTranslations(),
+    locale: Locale('en', 'US'),
+    fallbackLocale: Locale('en', 'US'),
     theme: ThemeData(
       primarySwatch: Colors.blue,
     ),
