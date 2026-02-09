@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:getx_app/app/modules/products/controllers/product_controller.dart';
+import 'package:getx_app/app/services/product_service.dart';
 
 // This class is responsible for binding the ProductController to the ProductView. When the 
 // ProductView is navigated to, the dependencies defined in this binding will be injected, 
@@ -9,6 +10,6 @@ import 'package:getx_app/app/modules/products/controllers/product_controller.dar
 class ProductBinding extends Bindings {
   @override
   void dependencies() {
-    Get.put(ProductController());
+    Get.put(ProductController(productService: ProductService()));
   }
 }

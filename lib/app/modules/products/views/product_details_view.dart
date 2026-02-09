@@ -36,7 +36,7 @@ class ProductDetailsView extends StatelessWidget {
             //   },
             //   child: const Text('Back'),
             // ),
-            Text(product.name, style: const TextStyle(fontSize: 24)),
+            Text(product.title, style: const TextStyle(fontSize: 24)),
             const SizedBox(height: 10),
             Text('\$${product.price}', style: const TextStyle(fontSize: 24)),
             const SizedBox(height: 20),
@@ -52,7 +52,7 @@ class ProductDetailsView extends StatelessWidget {
                 // );
                 Get.snackbar(
                   'Add to Cart',
-                  '${product.name} added to your cart',
+                  '${product.title} added to your cart',
                   snackPosition: SnackPosition.BOTTOM,
                   duration: Duration(seconds: 3),
                   backgroundColor: Colors.blueAccent,

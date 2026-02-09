@@ -18,7 +18,7 @@ class ProductView extends StatelessWidget {
           itemBuilder: (context, index) {
             final product = productController.products[index];
             return ListTile(
-              title: Text(product.name),
+              title: Text(product.title),
               subtitle: Text('\$${product.price}'),
               onTap: () {
                 Get.toNamed(Routes.productDetails, arguments: product); // Navigate to product details page with the selected product as an argument through the route name defined in Routes.productDetails
