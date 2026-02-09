@@ -2,7 +2,7 @@ class ProductModel {
   const ProductModel({required this.title, required this.price});
 
   factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
-    title: json['name'],
+    title: json['title'],
     price: (json['price'] as num).toDouble(),
   );
 

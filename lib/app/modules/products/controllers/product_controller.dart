@@ -13,11 +13,7 @@ class ProductController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    products.addAll([
-      const ProductModel(title: 'Product 1', price: 10.0),
-      const ProductModel(title: 'Product 2', price: 20.0),
-      const ProductModel(title: 'Product 3', price: 30.0),
-    ]);
+    fetchProducts();
   }
 
   void fetchProducts() async {
