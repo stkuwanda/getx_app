@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_app/app/modules/products/controllers/product_controller.dart';
 import 'package:getx_app/app/routes/app_pages.dart';
+import 'package:getx_app/app/services/theme_service.dart';
 
 class ProductView extends StatelessWidget {
   ProductView({super.key});
 
   final ProductController productController = Get.find<ProductController>();
+
+  final ThemeService _themeService = Get.find<ThemeService>();
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +25,12 @@ class ProductView extends StatelessWidget {
             } else {
               Get.updateLocale(const Locale('en', 'US'));
             }
+          },
+        ),
+         IconButton(
+          icon: const Icon(Icons.brightness_6),
+          onPressed: () {
+           _themeService.switchTheme(); // Toggle between light and dark themes using the ThemeService
           },
         ),
       ],), // Use .tr to translate the title based on the current locale
